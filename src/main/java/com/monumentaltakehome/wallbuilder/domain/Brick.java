@@ -37,7 +37,7 @@ public record Brick(double x, double y, double width, double height, boolean pla
             .filter(brick -> brick.rowNumber() == this.rowNumber - 1)
             .filter(brick -> brick.isFoundationOf(this))
             .filter(brick -> !brick.placed());
-            Stream<Brick> leftNeighbour = allBricks.stream()
+        Stream<Brick> leftNeighbour = allBricks.stream()
             .filter(brick -> brick.rowNumber() == this.rowNumber)
             .filter(brick -> brick.columnNumber() == this.columnNumber - 1)
             .filter(brick -> !brick.placed());

@@ -257,7 +257,7 @@ public class WildBondService implements WallService {
         int numberOfExistingRows = existingRows.size();
         boolean oddRow = numberOfExistingRows % 2 == 0; // odd considering 1st row as odd (index 0)
 
-        if (numberOfExistingRows >= 7 && newRow.length >= 4) {
+        if (numberOfExistingRows >= 6 && newRow.length >= 4) {
             //Check left teeth
             if (!rowPassesLeftTeethCheck(newRow, existingRows, oddRow, numberOfExistingRows)) {
                 return false;

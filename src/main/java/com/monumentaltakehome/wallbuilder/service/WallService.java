@@ -113,12 +113,10 @@ public interface WallService {
                 // Add the placeable brick to the nextStride
                 nextStride.add(brick);
 
-                // Update the brick in allBricks to set placed == true
+                // Update the brick in allBricks as placed
                 int index = allBricks.indexOf(brick);
                 if (index != -1) {
-                    allBricks.set(index, new Brick(
-                        brick.x(), brick.y(), brick.width(), brick.height(), true, brick.rowNumber(), brick.columnNumber()
-                    ));
+                    allBricks.set(index, brick.place());
                 }
 
                 // Refresh bricksWithinEnvelope to reflect the updated state
